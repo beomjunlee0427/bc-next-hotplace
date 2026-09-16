@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Local datasets and generated analysis outputs
+data/raw/
+data/processed/
+reports/figures/
+
+# Virtual environments
+.venv/
+.venv-*/
+.venv-obsolete/

@@ -1,0 +1,41 @@
+{
+  "input_rows": 242574,
+  "output_rows": 242574,
+  "columns": [
+    "STRD_YYMM",
+    "SIDO_NM",
+    "CCG_NM",
+    "GENDER_CD",
+    "AGE_CD",
+    "TP_BUZ_NO",
+    "TP_BUZ_NM",
+    "amt",
+    "cnt",
+    "month",
+    "unknown_demo",
+    "avg_amt_per_cnt",
+    "log_amt",
+    "log_cnt"
+  ],
+  "duplicate_business_grain_rows": 0,
+  "missing_values": {},
+  "unknown_demo_rows": 13161,
+  "month_counts": {
+    "2026-01": 40267,
+    "2026-02": 40160,
+    "2026-03": 40433,
+    "2026-04": 40507,
+    "2026-05": 40696,
+    "2026-06": 40511
+  },
+  "amount_summary": {
+    "min": 20000,
+    "median": 16000000.0,
+    "max": 4247220000
+  },
+  "count_summary": {
+    "min": 11,
+    "median": 810.0,
+    "max": 174529
+  }
+}
