@@ -68,7 +68,13 @@ def build_panel()->tuple[pd.DataFrame,dict]:
 
 def main()->None:
     OUT.mkdir(parents=True,exist_ok=True); REPORTS.mkdir(parents=True,exist_ok=True); inv=inventory(); panel,quality=build_panel(); panel.to_csv(OUT/"merged_panel_data.csv",index=False,encoding="utf-8-sig")
-    features=panel.drop(columns=["future_sales_growth","target_top20","source_file"],errors="ignore"); targets=panel[["quarter","admin_code","service_code","future_sales_growth","target_top20"]]; features.to_csv(OUT/"feature_data.csv",index=False,encoding="utf-8-sig"); targets.to_csv(OUT/"target_data.csv",index=False,encoding="utf-8-sig")
+    features=panel.drop(columns=["future_sales_growth","target_top20","source_file"],errors="ignore"); targets=panel[["quarter","admin_code","service_code","future_sales_growth","target_top20"]]
+    # Keep only rows that are fully usable for supervised learning. The raw
+    # panel remains unchanged for audit and downstream analysis.
+    learning_mask=features.notna().all(axis=1) & targets.notna().all(axis=1)
+    features=features.loc[learning_mask].reset_index(drop=True); targets=targets.loc[learning_mask].reset_index(drop=True)
+    features.to_csv(OUT/"feature_data.csv",index=False,encoding="utf-8-sig"); targets.to_csv(OUT/"target_data.csv",index=False,encoding="utf-8-sig")
+    quality["learning_rows_before_filter"]=int(len(panel)); quality["learning_rows_after_filter"]=int(len(features)); quality["learning_rows_removed_for_missing"]=int((~learning_mask).sum())
     quality["inventory_file_count"]=inv["file_count"]; (REPORTS/"data_quality_report.json").write_text(json.dumps(quality,ensure_ascii=False,indent=2),encoding="utf-8"); pd.DataFrame([quality]).to_csv(REPORTS/"data_quality_report.csv",index=False,encoding="utf-8-sig"); print(json.dumps(quality,ensure_ascii=False,indent=2))
 
 if __name__=="__main__": main()

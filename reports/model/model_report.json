@@ -1,0 +1,74 @@
+{
+  "train_rows": 203679,
+  "validation_rows": 33338,
+  "test_rows": 49385,
+  "features_numeric": [
+    "quarter_code",
+    "sales_amount",
+    "sales_count",
+    "quarter",
+    "year",
+    "q",
+    "store_count",
+    "new_store_count",
+    "closed_store_count",
+    "population_total",
+    "consumption_total",
+    "sales_growth_qoq",
+    "sales_count_growth_qoq",
+    "store_growth_qoq",
+    "sales_amount_lag1",
+    "sales_amount_lag2",
+    "sales_amount_roll4"
+  ],
+  "categorical_features": [
+    "admin_code",
+    "service_code"
+  ],
+  "metrics": [
+    {
+      "model": "logistic_regression",
+      "rows": 33338,
+      "roc_auc": 0.7324733331572686,
+      "pr_auc": 0.3719138854884816,
+      "precision": 0.3121208444552293,
+      "recall": 0.7719429857464366,
+      "f1": 0.44451164197157544,
+      "top20_precision": 0.3968801559922004,
+      "split": "validation"
+    },
+    {
+      "model": "logistic_regression",
+      "rows": 49385,
+      "roc_auc": 0.7322725990484455,
+      "pr_auc": 0.3821583684420302,
+      "precision": 0.3109812108559499,
+      "recall": 0.7562956945572705,
+      "f1": 0.44073613823303154,
+      "top20_precision": 0.410347271438696,
+      "split": "test"
+    },
+    {
+      "model": "random_forest",
+      "rows": 33338,
+      "roc_auc": 0.7844649048889147,
+      "pr_auc": 0.4902783300563911,
+      "precision": 0.37237911025145065,
+      "recall": 0.7221305326331583,
+      "f1": 0.49137314956610517,
+      "top20_precision": 0.4943752812359382,
+      "split": "validation"
+    },
+    {
+      "model": "random_forest",
+      "rows": 49385,
+      "roc_auc": 0.7849856863709214,
+      "pr_auc": 0.501022928292294,
+      "precision": 0.37657370517928285,
+      "recall": 0.7198415922014623,
+      "f1": 0.4944721515014125,
+      "top20_precision": 0.49600080996253926,
+      "split": "test"
+    }
+  ]
+}

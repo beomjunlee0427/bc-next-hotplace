@@ -25,5 +25,8 @@
     20253,
     20254
   ],
+  "learning_rows_before_filter": 343167,
+  "learning_rows_after_filter": 286449,
+  "learning_rows_removed_for_missing": 56718,
   "inventory_file_count": 21
 }

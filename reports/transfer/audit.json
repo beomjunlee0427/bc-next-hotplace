@@ -1,0 +1,27 @@
+{
+  "selected_model": "logistic",
+  "train_rows": 250,
+  "validation_rows": 75,
+  "test_rows": 75,
+  "final_fit_rows": 450,
+  "bc_regions_scored": 246,
+  "bc_regions_excluded": 9,
+  "bc_unmapped_industries": [
+    4004,
+    8021
+  ],
+  "unmapped_amount_share": 0.12924873938034986,
+  "forecast_quarter": "2026Q3",
+  "target": "Next-quarter matched-category sales growth top 20% across Seoul districts",
+  "limitations": [
+    "Industry correspondence requires provider codebook confirmation",
+    "Seoul estimated sales and BC coverage differ",
+    "No BC future outcomes to validate transfer",
+    "25 Seoul districts only; quarterly observations correlated",
+    "Relative growth label is not a confirmed hotplace label",
+    "Two BC quarters cannot provide acceleration or long-term trends",
+    "District code uses first five digits; boundary history not independently verified",
+    "Missing category sales not treated as zero; incomplete regions excluded",
+    "Score is not a calibrated BC probability"
+  ]
+}

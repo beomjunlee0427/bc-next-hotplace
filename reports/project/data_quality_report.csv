@@ -1,2 +1,2 @@
-﻿rows,columns,duplicate_rows,missing_cells,quarters,inventory_file_count
-343167,25,0,170754,"[20211, 20212, 20213, 20214, 20221, 20222, 20223, 20224, 20231, 20232, 20233, 20234, 20241, 20242, 20243, 20244, 20251, 20252, 20253, 20254]",21
+﻿rows,columns,duplicate_rows,missing_cells,quarters,learning_rows_before_filter,learning_rows_after_filter,learning_rows_removed_for_missing,inventory_file_count
+343167,25,0,170754,"[20211, 20212, 20213, 20214, 20221, 20222, 20223, 20224, 20231, 20232, 20233, 20234, 20241, 20242, 20243, 20244, 20251, 20252, 20253, 20254]",343167,286449,56718,21
